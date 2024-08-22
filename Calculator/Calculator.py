@@ -1,3 +1,5 @@
+import sys
+
 def exit_calc():
     d = str(input("Do you want to do another calculation(Y/N): "))
     e = d.upper()
@@ -7,6 +9,7 @@ def exit_calc():
         start_calc()
     elif e == 'N':
         print("\nCalculator Closed!")
+        sys.exit()
     else:
         print("\nWRONG INPUT! PLEASE TRY AGAIN!\n")
         exit_calc()
@@ -19,8 +22,13 @@ def start_calc():
     print("*************************")
     print("Made by Santhosh T")
     print("*************************\n")
+    input_num()
+
+def input_num():
+
     global a
     global b
+    
     try:
         a = int(input("Enter 1st Number: "))
         b = int(input("Enter 2nd Number: "))
